@@ -11,4 +11,13 @@
         <servlet-name>firstServlet</servlet-name>
         <url-pattern>/first</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>charTest</servlet-name>
+        <servlet-class>test.charTest</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>charTest</servlet-name>
+        <url-pattern>/charTest</url-pattern>
+    </servlet-mapping>
 </web-app>
