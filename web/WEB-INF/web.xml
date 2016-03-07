@@ -20,4 +20,35 @@
         <servlet-name>charTest</servlet-name>
         <url-pattern>/charTest</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>controlUser</servlet-name>
+        <servlet-class>servlets.controlUser</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>controlUser</servlet-name>
+        <url-pattern>/admin/user/control</url-pattern>
+    </servlet-mapping>
+    <filter>
+        <filter-name>charset</filter-name>
+        <filter-class>filter.CharsetFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>charset</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>authentication</filter-name>
+        <filter-class>filter.AuthenticationFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>authentication</filter-name>
+        <url-pattern>/admin/*</url-pattern>
+        <url-pattern>/SYS/admin/*</url-pattern>
+    </filter-mapping>
+    
+    <!--<listener>-->
+        <!--<listener-class>listner.Config</listener-class>-->
+    <!--</listener>-->
 </web-app>

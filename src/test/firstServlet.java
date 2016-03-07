@@ -20,6 +20,7 @@ public class firstServlet extends HttpServlet {
         out.println("<html>");
         out.println("<body>");
         out.println("<h3>");
+        out.println("大家好" + "</br>");
         out.println(req.getContextPath() + "</br>");
         out.println(req.getSession().getServletContext().getRealPath("/") + "</br>");
         Map<String, String[]> paramaps = req.getParameterMap();
