@@ -61,13 +61,27 @@ public class UserDaoDB implements IUserDao {
         } catch (SQLException e) {
             throw new RuntimeException(e.getMessage());
         }
-
+        close();
         return id;
     }
 
     @Override
-    public boolean delete(int id) {
-        return false;
+    public boolean delete(int id) throws MsgException{
+        conn = DBUtil.getConn();
+        String sql = "delete from " + DBUtil.tUser + " where id = ?";
+        int affectedRows = 0;
+        try {
+            ps = conn.prepareStatement(sql);
+            ps.setInt(1, id);
+            affectedRows = ps.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e.getMessage());
+        }
+        close();
+        if (affectedRows == 0) {
+            throw new MsgException("不能删除用户 id = " + id);
+        }
+        return true;
     }
 
     @Override
@@ -112,6 +126,7 @@ public class UserDaoDB implements IUserDao {
         } catch (SQLException e) {
             throw new RuntimeException(e.getMessage());
         }
+        close();
         return users;
     }
 
@@ -153,5 +168,29 @@ public class UserDaoDB implements IUserDao {
         } catch (SQLException e) {
             throw new RuntimeException("Close SQL Connection Fail", e);
         }
+    }
+
+    @Override
+    public User login(String username, String password) throws MsgException{
+        conn = DBUtil.getConn();
+        String sql = "select * from " + DBUtil.tUser + " where username = ?";
+        User u = null;
+        try {
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, username);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                u = sql2User(rs);
+                if (!u.getPassword().equals(password)) {
+                    throw new MsgException("密码不正确");
+                }
+            } else {
+                throw new MsgException("用户名 " + username + " 不存在");
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e.getMessage());
+        }
+        close();
+        return u;
     }
 }

@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -60,6 +59,17 @@ public class controlUser extends HttpServlet {
                 resp.sendRedirect(req.getContextPath() + "/admin/user/list.jsp");
             } catch (MsgException e) {
                 rd = req.getRequestDispatcher(req.getContextPath() + "/admin/user/add.jsp");
+                errMsg = e.getMessage();
+                req.setAttribute("errMsg", errMsg);
+                rd.forward(req, resp);
+            }
+        } else if (action.equals("delete")) {
+            int id = Integer.parseInt(req.getParameter("id"));
+            try {
+                udao.delete(id);
+                resp.sendRedirect(req.getContextPath() + "/admin/user/list.jsp");
+            } catch (MsgException e) {
+                rd = req.getRequestDispatcher(req.getContextPath() + "/admin/user/list.jsp");
                 errMsg = e.getMessage();
                 req.setAttribute("errMsg", errMsg);
                 rd.forward(req, resp);

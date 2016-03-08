@@ -29,6 +29,16 @@
         <servlet-name>controlUser</servlet-name>
         <url-pattern>/admin/user/control</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>loginUser</servlet-name>
+        <servlet-class>servlets.loginUser</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>loginUser</servlet-name>
+        <url-pattern>/msg/loginProcess</url-pattern>
+    </servlet-mapping>
+
     <filter>
         <filter-name>charset</filter-name>
         <filter-class>filter.CharsetFilter</filter-class>
@@ -51,4 +61,8 @@
     <!--<listener>-->
         <!--<listener-class>listner.Config</listener-class>-->
     <!--</listener>-->
+    
+    <welcome-file-list>
+        <welcome-file>/msg/login.jsp</welcome-file>
+    </welcome-file-list>
 </web-app>

@@ -11,11 +11,13 @@ import java.util.List;
 public interface IUserDao {
     public int add(User user)throws MsgException;
 
-    public boolean delete(int id);
+    public boolean delete(int id) throws MsgException;
 
     public boolean update(User user);
 
     public User load(int id) throws MsgException;
 
     public List<User> loadList();
+
+    public User login(String username, String password) throws MsgException;
 }

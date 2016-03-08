@@ -17,7 +17,7 @@
             text-align: center;
         }
 
-        div {
+        #addDiv {
             margin: 0 auto;
             width: 350px;
             clear: both;
@@ -50,6 +50,7 @@
     %>
 </head>
 <body>
+<jsp:include page="<%=request.getContextPath() + \"/inc/nav.jsp\"%>"/>
 <span style="color: red;font-weight: bold">
     <%
         if (request.getAttribute("errMsg") != null) {
@@ -82,7 +83,7 @@
 
     %>
 </span>
-<div align="center">
+<div align="center" id="addDiv">
     <form method="post" action="/admin/user/control">
         <input type="hidden" name="action" value="add"/>
         <label>用户名:</label><input type="text" name="username"
