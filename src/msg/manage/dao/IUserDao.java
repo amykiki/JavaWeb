@@ -13,7 +13,7 @@ public interface IUserDao {
 
     public boolean delete(int id) throws MsgException;
 
-    public boolean update(User user);
+    public boolean update(User user) throws MsgException;
 
     public User load(int id) throws MsgException;
 

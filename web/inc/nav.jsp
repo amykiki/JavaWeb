@@ -56,7 +56,7 @@
         %>
 <div id="nav">
     <div id="headright">
-        <span>欢迎[<a href="#"><%=luser.getNickname()%>]</a> <a href="<%=request.getContextPath()+ "/msg/login.jsp?logout=true"%>">注销</a></span>
+        <span>欢迎[<a href="<%=request.getContextPath()+ "/admin/user/info.jsp"%>"><%=luser.getNickname()%>]</a> <a href="<%=request.getContextPath()+ "/msg/login.jsp?logout=true"%>">注销</a></span>
     </div>
     <ul>
         <li><a href="<%=request.getContextPath()+ "/admin/user/list.jsp"%>">用户列表</a></li>
@@ -67,7 +67,8 @@
         <%
             }
         %>
-        <li><a href="#">修改用户</a></li>
+        <li><a href="<%=request.getContextPath()+ "/admin/user/info.jsp"%>">用户信息</a></li>
+        <li><a href="<%=request.getContextPath()+ "/admin/user/edit.jsp?id=" + luser.getId()%>">修改用户</a></li>
         <li><a href="#">文章列表</a></li>
     </ul>
     <hr/>

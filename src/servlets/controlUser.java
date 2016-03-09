@@ -3,6 +3,7 @@ package servlets;
 import msg.manage.dao.DaoFactory;
 import msg.manage.dao.IUserDao;
 import msg.manage.modal.Role;
+import msg.manage.modal.Status;
 import msg.manage.modal.User;
 import msg.manage.util.MsgException;
 
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,38 +27,61 @@ public class controlUser extends HttpServlet {
         String            action = req.getParameter("action");
         String            errMsg = "";
         RequestDispatcher rd;
-        ;
+        User              lu     = (User) req.getSession().getAttribute("loguser");
+        if (lu == null) {
+            resp.sendRedirect(req.getContextPath() + "/msg/login.jsp");
+            return;
+        }
+        resp.setCharacterEncoding("UTF-8");
+
         if (action.equals("add")) {
             Map<String, String> errMap = new HashMap<>();
             User                u      = new User();
-
-            if (!req.getParameter("username").equals("")) {
-                u.setUsername(req.getParameter("username"));
+            if (checkAuth(lu)) {
+                String getValue;
+                getValue = req.getParameter("username");
+                if (getValue != null && !getValue.equals("")) {
+                    u.setUsername(req.getParameter("username"));
+                } else {
+                    errMap.put("username", "用户名不能为空");
+                }
+                getValue = req.getParameter("password");
+                if (getValue != null && !getValue.equals("")) {
+                    u.setPassword(req.getParameter("password"));
+                } else {
+                    errMap.put("password", "密码不能为空");
+                }
+                getValue = req.getParameter("nickname");
+                if (getValue != null && !getValue.equals("")) {
+                    u.setNickname(req.getParameter("nickname"));
+                } else {
+                    errMap.put("nickname", "昵称不能为空");
+                }
+                if (req.getParameter("role") != null) {
+                    try {
+                        u.setRole(Role.valueOf(req.getParameter("role")));
+                    } catch (IllegalArgumentException e) {
+                        errMsg = "权限不正确";
+                        showAlertMsg(errMsg, req.getContextPath() + "/admin/user/list.jsp", resp);
+                        return;
+                    }
+                }
+                req.setAttribute("user", u);
+                if (!errMap.isEmpty()) {
+                    rd = req.getRequestDispatcher(req.getContextPath() + "/admin/user/add.jsp");
+                    req.setAttribute("errMap", errMap);
+                    rd.forward(req, resp);
+                    return;
+                }
             } else {
-                errMap.put("username", "用户名不能为空");
-            }
-            if (!req.getParameter("password").equals("")) {
-                u.setPassword(req.getParameter("password"));
-            } else {
-                errMap.put("password", "密码不能为空");
-            }
-            if (!req.getParameter("nickname").equals("")) {
-                u.setNickname(req.getParameter("nickname"));
-            } else {
-                errMap.put("nickname", "昵称不能为空");
-            }
-            if (req.getParameter("role") != null) {
-                u.setRole(Role.valueOf(req.getParameter("role")));
-            }
-            req.setAttribute("user", u);
-            if (!errMap.isEmpty()) {
-                rd = req.getRequestDispatcher(req.getContextPath() + "/admin/user/add.jsp");
-                req.setAttribute("errMap", errMap);
-                rd.forward(req, resp);
+                errMsg = "没有权限添加用户";
+                showAlertMsg(errMsg, req.getContextPath() + "/admin/user/list.jsp", resp);
+                return;
             }
             try {
                 udao.add(u);
                 resp.sendRedirect(req.getContextPath() + "/admin/user/list.jsp");
+                return;
             } catch (MsgException e) {
                 rd = req.getRequestDispatcher(req.getContextPath() + "/admin/user/add.jsp");
                 errMsg = e.getMessage();
@@ -64,16 +89,81 @@ public class controlUser extends HttpServlet {
                 rd.forward(req, resp);
             }
         } else if (action.equals("delete")) {
-            int id = Integer.parseInt(req.getParameter("id"));
-            try {
-                udao.delete(id);
-                resp.sendRedirect(req.getContextPath() + "/admin/user/list.jsp");
-            } catch (MsgException e) {
-                rd = req.getRequestDispatcher(req.getContextPath() + "/admin/user/list.jsp");
-                errMsg = e.getMessage();
-                req.setAttribute("errMsg", errMsg);
-                rd.forward(req, resp);
+            int id = checkID(req);
+            if (id > 0 && checkAuth(lu) && lu.getId() != id) {
+                try {
+                    udao.delete(id);
+                    resp.sendRedirect(req.getContextPath() + "/admin/user/list.jsp");
+                } catch (MsgException e) {
+                    rd = req.getRequestDispatcher(req.getContextPath() + "/admin/user/list.jsp");
+                    errMsg = e.getMessage();
+                    req.setAttribute("errMsg", errMsg);
+                    rd.forward(req, resp);
+                }
+            } else {
+                if (id > 0) {
+                    errMsg = "没有权限删除用户";
+                } else {
+                    errMsg = "ID不正确";
+                }
+                showAlertMsg(errMsg, req.getContextPath() + "/admin/user/list.jsp", resp);
+                return;
             }
+
+        } else if (action.equals("update")) {
+            int id = checkID(req);
+            if (id > 0 && (checkAuth(lu) || lu.getId() == id)) {
+                User u = new User();
+                u.setId(id);
+                String value;
+                value = req.getParameter("password");
+                if (value != null && !value.equals("")) {
+                    u.setPassword(value);
+                }
+                value = req.getParameter("nickname");
+                if (value != null && !value.equals("")) {
+                    u.setNickname(value);
+                }
+                if (lu.getId() != id) {
+                    if (req.getParameter("role") != null) {
+                        try {
+                            System.out.println(req.getParameter("role"));
+                            u.setRole(Role.valueOf(req.getParameter("role")));
+                        } catch (IllegalArgumentException e) {
+                            errMsg = "权限不正确";
+                            showAlertMsg(errMsg, req.getContextPath() + "/admin/user/edit.jsp?id=" + id, resp);
+                            return;
+                        }
+                    }
+                    if (req.getParameter("status") != null) {
+                        try {
+                            u.setStatus(Status.valueOf(req.getParameter("status")));
+                        } catch (IllegalArgumentException e) {
+                            errMsg = "状态不正确";
+                            showAlertMsg(errMsg, req.getContextPath() + "/admin/user/edit.jsp?id=" + id, resp);
+                            return;
+                        }
+                    }
+                }
+                try {
+                    udao.update(u);
+                    resp.sendRedirect(req.getContextPath() + "/admin/user/edit.jsp?id=" + id);
+                } catch (MsgException e) {
+                    errMsg = "修改用户失败";
+                    showAlertMsg(errMsg, req.getContextPath() + "/admin/user/edit.jsp?id=" + id, resp);
+                    return;
+                }
+
+            } else  {
+                if (id > 0) {
+                    errMsg = "没有权限修改用户";
+                } else {
+                    errMsg = "ID不正确";
+                }
+                showAlertMsg(errMsg, req.getContextPath() + "/admin/user/list.jsp", resp);
+                return;
+            }
+
         } else if (action.equals("load")) {
             int id = -1;
             try {
@@ -86,6 +176,35 @@ public class controlUser extends HttpServlet {
             }
         }
 
-//        out.println("this page should not be viewed");
+    }
+
+    private boolean checkAuth(User user) {
+        if (user.getRole().equals(Role.ADMIN) && user.getStatus().equals(Status.INUSE)) {
+            return true;
+        }
+        return false;
+    }
+
+    private void showAlertMsg(String errMsg, String href, HttpServletResponse response) {
+        try {
+            PrintWriter out = response.getWriter();
+            response.setContentType("text/html");
+            response.setCharacterEncoding("UTF-8");
+            out.println("<body onload=\"timer=setTimeout(function(){ window.location='" + href + "';}, 3000)\">");
+            out.println("<p>" + errMsg + "</p>");
+            out.println("</body>");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private int checkID(HttpServletRequest req) {
+        int id = 0;
+        try {
+            id = Integer.parseInt(req.getParameter("id"));
+        } catch (NumberFormatException e) {
+            id = -1;
+        }
+        return id;
     }
 }

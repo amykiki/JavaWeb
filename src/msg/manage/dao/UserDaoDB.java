@@ -1,10 +1,12 @@
 package msg.manage.dao;
 
+import com.sun.xml.internal.bind.v2.model.core.ID;
 import msg.manage.modal.Role;
 import msg.manage.modal.Status;
 import msg.manage.modal.User;
 import msg.manage.util.DBUtil;
 import msg.manage.util.MsgException;
+import sun.plugin.cache.OldCacheEntry;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -22,10 +24,10 @@ public class UserDaoDB implements IUserDao {
     private ResultSet         rs   = null;
 
     @Override
-    public int add(User user) throws MsgException{
+    public int add(User user) throws MsgException {
         conn = DBUtil.getConn();
         String sql = "select count(*) from " + DBUtil.tUser + " where USERNAME = ?";
-        int id = -1;
+        int    id  = -1;
         try {
             ps = conn.prepareStatement(sql);
             ps.setString(1, user.getUsername());
@@ -66,10 +68,10 @@ public class UserDaoDB implements IUserDao {
     }
 
     @Override
-    public boolean delete(int id) throws MsgException{
+    public boolean delete(int id) throws MsgException {
         conn = DBUtil.getConn();
-        String sql = "delete from " + DBUtil.tUser + " where id = ?";
-        int affectedRows = 0;
+        String sql          = "delete from " + DBUtil.tUser + " where id = ?";
+        int    affectedRows = 0;
         try {
             ps = conn.prepareStatement(sql);
             ps.setInt(1, id);
@@ -85,8 +87,56 @@ public class UserDaoDB implements IUserDao {
     }
 
     @Override
-    public boolean update(User user) {
-        return false;
+    public boolean update(User user) throws MsgException {
+        User oldu = null;
+        try {
+            oldu = load(user.getId());
+        } catch (MsgException e) {
+            throw new MsgException("修改用户失败 " + e.getMessage());
+        }
+        conn = DBUtil.getConn();
+        String sql   = "update " + DBUtil.tUser + " set password = ?, nickname = ?, role = ?, status = ? where id = ?";
+        String value;
+        int    num;
+        int affectedRows;
+        try {
+            ps = conn.prepareStatement(sql);
+            if (user.getPassword() != null) {
+                value = user.getPassword();
+            } else {
+                value = oldu.getPassword();
+            }
+            ps.setString(1, value);
+            if (user.getNickname() != null) {
+                value = user.getNickname();
+            } else {
+                value = oldu.getNickname();
+            }
+            ps.setString(2, value);
+            if (user.getRole() != null) {
+                num = user.getRole().getCode();
+            } else {
+                num = oldu.getRole().getCode();
+            }
+            ps.setInt(3, num);
+            if (user.getStatus() != null) {
+                num = user.getStatus().getCode();
+            } else {
+                num = oldu.getStatus().getCode();
+            }
+            ps.setInt(4, num);
+            ps.setInt(5, user.getId());
+            affectedRows = ps.executeUpdate();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e.getMessage());
+        }
+
+        close();
+        if (affectedRows == 0) {
+            throw new MsgException("更新用户失败 id = " + user.getId());
+        }
+        return true;
     }
 
     @Override
@@ -171,10 +221,10 @@ public class UserDaoDB implements IUserDao {
     }
 
     @Override
-    public User login(String username, String password) throws MsgException{
+    public User login(String username, String password) throws MsgException {
         conn = DBUtil.getConn();
         String sql = "select * from " + DBUtil.tUser + " where username = ?";
-        User u = null;
+        User   u   = null;
         try {
             ps = conn.prepareStatement(sql);
             ps.setString(1, username);

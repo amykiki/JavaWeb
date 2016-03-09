@@ -78,7 +78,7 @@
             if (luser != null) {
                 if (luser.getRole().equals(Role.ADMIN)) {
         %>
-        <td><a href="#">更新</a></td>
+        <td><a href="<%=request.getContextPath()+ "/admin/user/edit.jsp?id=" + u.getId()%>">更新</a></td>
         <%
                     if (u.getId() == luser.getId()) {
         %>
@@ -92,7 +92,7 @@
                 } else {
                     if (u.getId() == luser.getId()) {
         %>
-        <td><a href="#">更新</a></td>
+        <td><a href="<%=request.getContextPath()+ "/admin/user/edit.jsp?id=" + u.getId()%>">更新</a></td>
         <%
                     } else {
         %>
