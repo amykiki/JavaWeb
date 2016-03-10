@@ -1,5 +1,6 @@
 package msg.manage.dao;
 
+import msg.manage.modal.Pager;
 import msg.manage.modal.User;
 import msg.manage.util.MsgException;
 
@@ -17,7 +18,7 @@ public interface IUserDao {
 
     public User load(int id) throws MsgException;
 
-    public List<User> loadList();
+    public Pager loadList(int pageIndex, int pageItems);
 
     public User login(String username, String password) throws MsgException;
 }

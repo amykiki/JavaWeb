@@ -32,3 +32,4 @@ FROM t_user;
 SELECT * FROM t_msg;
 
 UPDATE t_user  SET `PASSWORD` = '323232', NICKNAME = '小周周' WHERE id = 14;
+

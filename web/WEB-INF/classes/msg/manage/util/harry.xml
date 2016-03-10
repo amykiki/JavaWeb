@@ -1,0 +1,1364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Harry-Potter-Character>
+  <user>
+    <username>Harry James Potter</username>
+    <nickname>哈利-詹姆-波特</nickname>
+  </user>
+  <user>
+    <username>James Potter</username>
+    <nickname>詹姆-波特</nickname>
+  </user>
+  <user>
+    <username>Lily Evans</username>
+    <nickname>莉莉-伊万斯</nickname>
+  </user>
+  <user>
+    <username>Ginny Weasley</username>
+    <nickname>金妮-韦斯莱</nickname>
+  </user>
+  <user>
+    <username>James Sirius Potter</username>
+    <nickname>詹姆-小天狼星-波特</nickname>
+  </user>
+  <user>
+    <username>Albus Severus Potter</username>
+    <nickname>阿不思-西弗勒斯-波特</nickname>
+  </user>
+  <user>
+    <username>Lily Luna Potter</username>
+    <nickname>莉莉-卢娜-波特</nickname>
+  </user>
+  <user>
+    <username>Ronald Billius Weasley</username>
+    <nickname>罗恩-韦斯莱</nickname>
+  </user>
+  <user>
+    <username>Aurthur Weasley</username>
+    <nickname>亚瑟-韦斯莱</nickname>
+  </user>
+  <user>
+    <username>Molly Prewett</username>
+    <nickname>莫丽-普茹维特</nickname>
+  </user>
+  <user>
+    <username>CharlieWeasley</username>
+    <nickname>查理-韦斯莱</nickname>
+  </user>
+  <user>
+    <username>Percy Ignatius Weasley</username>
+    <nickname>珀西-伊格内修斯-韦斯莱</nickname>
+  </user>
+  <user>
+    <username>Audrey Weasley</username>
+    <nickname>奥黛丽-韦斯莱</nickname>
+  </user>
+  <user>
+    <username>FredWeasley</username>
+    <nickname>弗雷德-韦斯莱</nickname>
+  </user>
+  <user>
+    <username>George Weasley</username>
+    <nickname>乔治-韦斯莱</nickname>
+  </user>
+  <user>
+    <username>Angelina Johnson</username>
+    <nickname>安吉利娜-约翰逊</nickname>
+  </user>
+  <user>
+    <username>Rose Weasley</username>
+    <nickname>罗丝-韦斯莱</nickname>
+  </user>
+  <user>
+    <username>Hugo Weasley</username>
+    <nickname>雨果-韦斯莱</nickname>
+  </user>
+  <user>
+    <username>Abraxas Malfoy</username>
+    <nickname>阿布拉克萨斯-马尔福</nickname>
+  </user>
+  <user>
+    <username>LuciusMalfoy</username>
+    <nickname>卢修斯-马尔福</nickname>
+  </user>
+  <user>
+    <username>NarcissaBlack</username>
+    <nickname>纳西莎-布莱克</nickname>
+  </user>
+  <user>
+    <username>Astoria Greengrass</username>
+    <nickname>阿斯托利亚-格林格拉斯</nickname>
+  </user>
+  <user>
+    <username>Scorpio Malfoy</username>
+    <nickname>斯科皮-马尔福</nickname>
+  </user>
+  <user>
+    <username>Sirius Black</username>
+    <nickname>小天狼星-布莱克</nickname>
+  </user>
+  <user>
+    <username>Neville Longbottom</username>
+    <nickname>纳威-隆巴顿</nickname>
+  </user>
+  <user>
+    <username>Frank Longbottom</username>
+    <nickname>弗兰克-隆巴顿</nickname>
+  </user>
+  <user>
+    <username>Alice Longbottom</username>
+    <nickname>艾丽斯-隆巴顿</nickname>
+  </user>
+  <user>
+    <username>Alger Longbottom</username>
+    <nickname>阿尔吉-隆巴顿</nickname>
+  </user>
+  <user>
+    <username>Hannah Abbott</username>
+    <nickname>汉娜-艾博</nickname>
+  </user>
+  <user>
+    <username>Remus John Lupin</username>
+    <nickname>莱姆斯-卢平</nickname>
+  </user>
+  <user>
+    <username>Teddy Remus Lupin</username>
+    <nickname>泰迪-莱姆斯-卢平</nickname>
+  </user>
+  <user>
+    <username>AlbusPercival Wulfric Brian Dumbledore</username>
+    <nickname>阿不思-邓布利多</nickname>
+  </user>
+  <user>
+    <username>Severus Snape</username>
+    <nickname>西弗勒斯-斯内普</nickname>
+  </user>
+  <user>
+    <username>Godric Gryffindor</username>
+    <nickname>戈德里克-格兰芬多</nickname>
+  </user>
+  <user>
+    <username>Helga Hufflepuff</username>
+    <nickname>赫尔加-赫奇帕奇</nickname>
+  </user>
+  <user>
+    <username>Rowena Ravenclaw</username>
+    <nickname>罗伊纳-拉文克劳</nickname>
+  </user>
+  <user>
+    <username>Salazar Slytherin</username>
+    <nickname>萨拉查-斯莱特林</nickname>
+  </user>
+  <user>
+    <username>Quirrel</username>
+    <nickname>奇洛</nickname>
+  </user>
+  <user>
+    <username>Rubeus Hagrid</username>
+    <nickname>鲁伯-海格</nickname>
+  </user>
+  <user>
+    <username>Gilderoy Lockhart</username>
+    <nickname>吉德罗-洛哈特</nickname>
+  </user>
+  <user>
+    <username>Remus John Lupin</username>
+    <nickname>莱姆斯-卢平</nickname>
+  </user>
+  <user>
+    <username>Mad</username>
+    <nickname>疯眼汉穆迪</nickname>
+  </user>
+  <user>
+    <username>Dolores Umbridge</username>
+    <nickname>多洛雷斯-乌姆里奇</nickname>
+  </user>
+  <user>
+    <username>Horace E</username>
+    <nickname>霍拉斯-斯拉格霍恩</nickname>
+  </user>
+  <user>
+    <username>Pomona Sprout</username>
+    <nickname>波莫娜-斯普劳特</nickname>
+  </user>
+  <user>
+    <username>Filius Flitwick</username>
+    <nickname>菲利乌斯-弗利维</nickname>
+  </user>
+  <user>
+    <username>Madam Hooch</username>
+    <nickname>霍琦夫人</nickname>
+  </user>
+  <user>
+    <username>Firenze</username>
+    <nickname>费伦泽</nickname>
+  </user>
+  <user>
+    <username>Sinistra</username>
+    <nickname>辛尼斯塔</nickname>
+  </user>
+  <user>
+    <username>Grubbly</username>
+    <nickname>格拉普兰</nickname>
+  </user>
+  <user>
+    <username>Vector</username>
+    <nickname>维克多</nickname>
+  </user>
+  <user>
+    <username>Voldmort</username>
+    <nickname>伏地魔</nickname>
+  </user>
+  <user>
+    <username>Quirrel</username>
+    <nickname>奇洛</nickname>
+  </user>
+  <user>
+    <username>Tom Marvolo Riddle</username>
+    <nickname>汤姆-马沃罗-里德尔</nickname>
+  </user>
+  <user>
+    <username>Dolores Umbridge</username>
+    <nickname>多洛雷斯-乌姆里奇</nickname>
+  </user>
+  <user>
+    <username>Dobby</username>
+    <nickname>多比</nickname>
+  </user>
+  <user>
+    <username>Winky</username>
+    <nickname>闪闪</nickname>
+  </user>
+  <user>
+    <username>Regulus Arcturus Black</username>
+    <nickname>雷古勒斯-布莱克</nickname>
+  </user>
+  <user>
+    <username>Victor Krum</username>
+    <nickname>威克多尔-克鲁姆</nickname>
+  </user>
+  <user>
+    <username>Argus Filch</username>
+    <nickname>阿格斯-费尔奇</nickname>
+  </user>
+  <user>
+    <username>Gabrielle Delacour</username>
+    <nickname>加布丽-德拉库尔</nickname>
+  </user>
+  <user>
+    <username>Rufus Scrimgeour</username>
+    <nickname>鲁弗斯-斯克林杰</nickname>
+  </user>
+  <user>
+    <username>Cornelius Fudge</username>
+    <nickname>康奈利-福吉</nickname>
+  </user>
+  <user>
+    <username>Lavender Brown</username>
+    <nickname>拉文德-布朗</nickname>
+  </user>
+  <user>
+    <username>Parvati Patil</username>
+    <nickname>帕瓦蒂-佩蒂尔</nickname>
+  </user>
+  <user>
+    <username>Igor Karkaroff</username>
+    <nickname>伊戈尔-卡卡洛夫</nickname>
+  </user>
+  <user>
+    <username>Madam Maxime</username>
+    <nickname>马克西姆夫人</nickname>
+  </user>
+  <user>
+    <username>Angelina Johnson</username>
+    <nickname>安吉利娜-约翰逊</nickname>
+  </user>
+  <user>
+    <username>Dennis Creevey</username>
+    <nickname>丹尼斯-克里维</nickname>
+  </user>
+  <user>
+    <username>Penelop Clearwater</username>
+    <nickname>佩内洛-克里瓦特</nickname>
+  </user>
+  <user>
+    <username>Alicia Spinnet</username>
+    <nickname>艾丽娅-斯平内特</nickname>
+  </user>
+  <user>
+    <username>Madam Pince</username>
+    <nickname>伊尔玛-平斯</nickname>
+  </user>
+  <user>
+    <username>Mr Ollivander</username>
+    <nickname>奥利凡德</nickname>
+  </user>
+  <user>
+    <username>Madam Malkin</username>
+    <nickname>摩金夫人</nickname>
+  </user>
+  <user>
+    <username>Peeves</username>
+    <nickname>皮皮鬼</nickname>
+  </user>
+  <user>
+    <username>Fat Friar</username>
+    <nickname>胖修士</nickname>
+  </user>
+  <user>
+    <username>Bloody Baron</username>
+    <nickname>血人巴罗</nickname>
+  </user>
+  <user>
+    <username>Nearly Headless Nick</username>
+    <nickname>差点没头的尼克</nickname>
+  </user>
+  <user>
+    <username>Bertha Jorkins</username>
+    <nickname>伯莎-乔金斯</nickname>
+  </user>
+  <user>
+    <username>Buckbeak</username>
+    <nickname>巴克比克</nickname>
+  </user>
+  <user>
+    <username>Fang</username>
+    <nickname>牙牙</nickname>
+  </user>
+  <user>
+    <username>Norbert</username>
+    <nickname>诺伯</nickname>
+  </user>
+  <user>
+    <username>Fluffy</username>
+    <nickname>路威</nickname>
+  </user>
+  <user>
+    <username>Aragog</username>
+    <nickname>阿拉戈克</nickname>
+  </user>
+  <user>
+    <username>Crookshanks</username>
+    <nickname>克鲁克山</nickname>
+  </user>
+  <user>
+    <username>Pigwidgeon</username>
+    <nickname>小猪朱薇琼</nickname>
+  </user>
+  <user>
+    <username>Scabbers</username>
+    <nickname>斑斑</nickname>
+  </user>
+  <user>
+    <username>Hedwig</username>
+    <nickname>海德薇</nickname>
+  </user>
+  <user>
+    <username>Hannah Abbott</username>
+    <nickname>汉娜-艾博</nickname>
+  </user>
+  <user>
+    <username>Millicent Bulstrode</username>
+    <nickname>米里森-伯斯德</nickname>
+  </user>
+  <user>
+    <username>Justin Finch</username>
+    <nickname>贾斯廷-芬列里</nickname>
+  </user>
+  <user>
+    <username>Fawkes</username>
+    <nickname>福克斯</nickname>
+  </user>
+  <user>
+    <username>Griphook</username>
+    <nickname>拉环</nickname>
+  </user>
+  <user>
+    <username>Markus Flint</username>
+    <nickname>马库斯-弗林特</nickname>
+  </user>
+  <user>
+    <username>Ronan</username>
+    <nickname>罗南</nickname>
+  </user>
+  <user>
+    <username>Bane</username>
+    <nickname>贝恩</nickname>
+  </user>
+  <user>
+    <username>Sir Cadogan</username>
+    <nickname>卡多根爵士</nickname>
+  </user>
+  <user>
+    <username>Amos Diggory</username>
+    <nickname>阿莫斯-迪戈里</nickname>
+  </user>
+  <user>
+    <username>Rufus Scrimgeour</username>
+    <nickname>鲁弗斯-斯克林杰</nickname>
+  </user>
+  <user>
+    <username>Gregory Goyle</username>
+    <nickname>格雷戈里-高尔</nickname>
+  </user>
+  <user>
+    <username>Vincent Crabbe</username>
+    <nickname>文森特-克拉布</nickname>
+  </user>
+  <user>
+    <username>Marlene Mckinon</username>
+    <nickname>马琳-麦金农</nickname>
+  </user>
+  <user>
+    <username>Edgar Bones</username>
+    <nickname>埃德加-博恩斯</nickname>
+  </user>
+  <user>
+    <username>Luna Lovegood</username>
+    <nickname>卢娜-洛夫古德</nickname>
+  </user>
+  <user>
+    <username>Put</username>
+    <nickname>熄灯器</nickname>
+  </user>
+  <user>
+    <username>Curse</username>
+    <nickname>魔咒</nickname>
+  </user>
+  <user>
+    <username>Wand</username>
+    <nickname>魔杖</nickname>
+  </user>
+  <user>
+    <username>Elder Wand</username>
+    <nickname>老魔杖</nickname>
+  </user>
+  <user>
+    <username>invisible cloak</username>
+    <nickname>隐形衣</nickname>
+  </user>
+  <user>
+    <username>Resurrection Stone</username>
+    <nickname>复活石</nickname>
+  </user>
+  <user>
+    <username>Horcrux</username>
+    <nickname>魂器</nickname>
+  </user>
+  <user>
+    <username>the Mirror of Erised</username>
+    <nickname>厄里斯魔镜</nickname>
+  </user>
+  <user>
+    <username>Marauder</username>
+    <nickname>活点地图</nickname>
+  </user>
+  <user>
+    <username>Sorting hat</username>
+    <nickname>分院帽</nickname>
+  </user>
+  <user>
+    <username>Cloak</username>
+    <nickname>披风</nickname>
+  </user>
+  <user>
+    <username>Parchment</username>
+    <nickname>羊皮纸</nickname>
+  </user>
+  <user>
+    <username>Knight Bus</username>
+    <nickname>骑士公共汽车</nickname>
+  </user>
+  <user>
+    <username>Portkey</username>
+    <nickname>门钥匙</nickname>
+  </user>
+  <user>
+    <username>the Hand of Glory</username>
+    <nickname>光荣之手</nickname>
+  </user>
+  <user>
+    <username>Wizarding Wireless Network</username>
+    <nickname>飞路网</nickname>
+  </user>
+  <user>
+    <username>Cauldron</username>
+    <nickname>坩埚</nickname>
+  </user>
+  <user>
+    <username>Phial</username>
+    <nickname>药瓶</nickname>
+  </user>
+  <user>
+    <username>Memoriey Ball</username>
+    <nickname>当你忘记什么东西时会变红来提醒</nickname>
+  </user>
+  <user>
+    <username>the Goblet of Fire</username>
+    <nickname>三强争霸赛中选勇士的用具</nickname>
+  </user>
+  <user>
+    <username>Alchemy</username>
+    <nickname>炼金术</nickname>
+  </user>
+  <user>
+    <username>Black Magic</username>
+    <nickname>黑魔法</nickname>
+  </user>
+  <user>
+    <username>Dark Mark</username>
+    <nickname>是食死徒的专利</nickname>
+  </user>
+  <user>
+    <username>Disapparate</username>
+    <nickname>幻影移形</nickname>
+  </user>
+  <user>
+    <username>Divination</username>
+    <nickname>占卜学</nickname>
+  </user>
+  <user>
+    <username>Fidelius Charm</username>
+    <nickname>赤胆忠心咒</nickname>
+  </user>
+  <user>
+    <username>Four Point Spell</username>
+    <nickname>使得魔杖尖端指北</nickname>
+  </user>
+  <user>
+    <username>Leprechaun Gold</username>
+    <nickname>消失数小时</nickname>
+  </user>
+  <user>
+    <username>Occlumency</username>
+    <nickname>大脑封闭术</nickname>
+  </user>
+  <user>
+    <username>Patronum</username>
+    <nickname>打击摄魂怪</nickname>
+  </user>
+  <user>
+    <username>Petrifact</username>
+    <nickname>全身束缚咒</nickname>
+  </user>
+  <user>
+    <username>Reductor Curse</username>
+    <nickname>击碎固体</nickname>
+  </user>
+  <user>
+    <username>Shield Charm</username>
+    <nickname>暂时的隔墙使魔咒偏向</nickname>
+  </user>
+  <user>
+    <username>Side</username>
+    <nickname>随从显形</nickname>
+  </user>
+  <user>
+    <username>Transfiguration</username>
+    <nickname>变形术</nickname>
+  </user>
+  <user>
+    <username>Unbreakable Vow</username>
+    <nickname>牢不可破的誓言</nickname>
+  </user>
+  <user>
+    <username>Morsmordre</username>
+    <nickname>显现黑魔标记</nickname>
+  </user>
+  <user>
+    <username>Mobilicorpus</username>
+    <nickname>幻影显形</nickname>
+  </user>
+  <user>
+    <username>Accio</username>
+    <nickname>飞去</nickname>
+  </user>
+  <user>
+    <username>Aguamenti</username>
+    <nickname>清水如泉</nickname>
+  </user>
+  <user>
+    <username>Alohomora</username>
+    <nickname>阿拉霍洞开</nickname>
+  </user>
+  <user>
+    <username>Aparecium</username>
+    <nickname>急急现形</nickname>
+  </user>
+  <user>
+    <username>Avada Kedavra</username>
+    <nickname>阿瓦达索命</nickname>
+  </user>
+  <user>
+    <username>Avis</username>
+    <nickname>飞鸟群群</nickname>
+  </user>
+  <user>
+    <username>Cave inimicum</username>
+    <nickname>降敌陷阱</nickname>
+  </user>
+  <user>
+    <username>Colloportus</username>
+    <nickname>速速禁锢</nickname>
+  </user>
+  <user>
+    <username>Comfundo</username>
+    <nickname>混淆视听</nickname>
+  </user>
+  <user>
+    <username>Crucio</username>
+    <nickname>钻心剜骨</nickname>
+  </user>
+  <user>
+    <username>Deletrius</username>
+    <nickname>消隐无踪</nickname>
+  </user>
+  <user>
+    <username>Densaugeo</username>
+    <nickname>门牙赛大棒</nickname>
+  </user>
+  <user>
+    <username>Diffindo</username>
+    <nickname>四分五裂</nickname>
+  </user>
+  <user>
+    <username>Disillusionment</username>
+    <nickname>幻身咒</nickname>
+  </user>
+  <user>
+    <username>Dissendium</username>
+    <nickname>左右分离</nickname>
+  </user>
+  <user>
+    <username>Enervate</username>
+    <nickname>快快复苏</nickname>
+  </user>
+  <user>
+    <username>Engorgio</username>
+    <nickname>速速变大</nickname>
+  </user>
+  <user>
+    <username>Expecto Patronum</username>
+    <nickname>呼神护卫</nickname>
+  </user>
+  <user>
+    <username>Expulso</username>
+    <nickname>飞沙走石</nickname>
+  </user>
+  <user>
+    <username>Expelliarmus</username>
+    <nickname>除你武器</nickname>
+  </user>
+  <user>
+    <username>Finite</username>
+    <nickname>终了结束</nickname>
+  </user>
+  <user>
+    <username>Finite incantatem</username>
+    <nickname>咒立停</nickname>
+  </user>
+  <user>
+    <username>Flagrate</username>
+    <nickname>标记显现</nickname>
+  </user>
+  <user>
+    <username>Furnunculus</username>
+    <nickname>火烤热辣辣</nickname>
+  </user>
+  <user>
+    <username>Geminio</username>
+    <nickname>复制成双</nickname>
+  </user>
+  <user>
+    <username>Homenum revelio</username>
+    <nickname>人形显身</nickname>
+  </user>
+  <user>
+    <username>Impedimenta</username>
+    <nickname>障碍重重</nickname>
+  </user>
+  <user>
+    <username>Imperio</username>
+    <nickname>魂魄出窍</nickname>
+  </user>
+  <user>
+    <username>Impervius</username>
+    <nickname>水火不侵</nickname>
+  </user>
+  <user>
+    <username>Incarcerous</username>
+    <nickname>速速禁锢</nickname>
+  </user>
+  <user>
+    <username>Incendio</username>
+    <nickname>火焰熊熊</nickname>
+  </user>
+  <user>
+    <username>Liberacorpus</username>
+    <nickname>金钟落地</nickname>
+  </user>
+  <user>
+    <username>Legilimens</username>
+    <nickname>摄神取念</nickname>
+  </user>
+  <user>
+    <username>Levicorpus</username>
+    <nickname>倒挂金钟</nickname>
+  </user>
+  <user>
+    <username>Locomotor</username>
+    <nickname>移动</nickname>
+  </user>
+  <user>
+    <username>Locomotor Mortis</username>
+    <nickname>腿立僵停死</nickname>
+  </user>
+  <user>
+    <username>Lumos Maxima</username>
+    <nickname>荧光闪烁</nickname>
+  </user>
+  <user>
+    <username>Metelojinx recanto</username>
+    <nickname>云咒撤回</nickname>
+  </user>
+  <user>
+    <username>Mobiliarbus</username>
+    <nickname>移形幻影</nickname>
+  </user>
+  <user>
+    <username>Nox</username>
+    <nickname>诺克斯</nickname>
+  </user>
+  <user>
+    <username>Obliviate</username>
+    <nickname>一忘皆空</nickname>
+  </user>
+  <user>
+    <username>Orchideus</username>
+    <nickname>兰花盛开</nickname>
+  </user>
+  <user>
+    <username>Pack</username>
+    <nickname>收拾</nickname>
+  </user>
+  <user>
+    <username>Peskipiksi Pesternomi</username>
+    <nickname>佩斯特诺米</nickname>
+  </user>
+  <user>
+    <username>Petrificus totalus</username>
+    <nickname>统统石化</nickname>
+  </user>
+  <user>
+    <username>Point Me</username>
+    <nickname>给我指路</nickname>
+  </user>
+  <user>
+    <username>Portus</username>
+    <nickname>使物体变成门钥匙</nickname>
+  </user>
+  <user>
+    <username>Prior Incantato</username>
+    <nickname>闪回前咒</nickname>
+  </user>
+  <user>
+    <username>Protego</username>
+    <nickname>盔甲护身</nickname>
+  </user>
+  <user>
+    <username>Protego totalum</username>
+    <nickname>统统加护</nickname>
+  </user>
+  <user>
+    <username>Quietus</username>
+    <nickname>悄声细语</nickname>
+  </user>
+  <user>
+    <username>Reducio</username>
+    <nickname>速速缩小</nickname>
+  </user>
+  <user>
+    <username>Reducto</username>
+    <nickname>粉身碎骨</nickname>
+  </user>
+  <user>
+    <username>Relashio</username>
+    <nickname>力松劲泄</nickname>
+  </user>
+  <user>
+    <username>Reparo</username>
+    <nickname>恢复如初</nickname>
+  </user>
+  <user>
+    <username>Repello Muggletum</username>
+    <nickname>麻瓜屏蔽</nickname>
+  </user>
+  <user>
+    <username>Rictusempra</username>
+    <nickname>咧嘴呼啦啦</nickname>
+  </user>
+  <user>
+    <username>Riddikulus</username>
+    <nickname>滑稽滑稽</nickname>
+  </user>
+  <user>
+    <username>Salvio hexia</username>
+    <nickname>平安镇守</nickname>
+  </user>
+  <user>
+    <username>Scourgify</username>
+    <nickname>清理一新</nickname>
+  </user>
+  <user>
+    <username>Sectumsempra</username>
+    <nickname>神锋无影</nickname>
+  </user>
+  <user>
+    <username>Serpensortia</username>
+    <nickname>乌龙出洞</nickname>
+  </user>
+  <user>
+    <username>Silencio</username>
+    <nickname>无声无息</nickname>
+  </user>
+  <user>
+    <username>Sonorus</username>
+    <nickname>声音洪亮</nickname>
+  </user>
+  <user>
+    <username>Stupefy</username>
+    <nickname>昏昏倒地</nickname>
+  </user>
+  <user>
+    <username>Tarantallegra</username>
+    <nickname>塔郎泰拉舞</nickname>
+  </user>
+  <user>
+    <username>Tergeo</username>
+    <nickname>旋风扫净</nickname>
+  </user>
+  <user>
+    <username>Unplottable</username>
+    <nickname>不可标绘</nickname>
+  </user>
+  <user>
+    <username>Waddiwasi</username>
+    <nickname>瓦迪瓦西</nickname>
+  </user>
+  <user>
+    <username>Glisseo</username>
+    <nickname>滑道平平</nickname>
+  </user>
+  <user>
+    <username>Duro</username>
+    <nickname>幻形石板</nickname>
+  </user>
+  <user>
+    <username>Muffliato</username>
+    <nickname>闭耳塞听</nickname>
+  </user>
+  <user>
+    <username>Langlock</username>
+    <nickname>锁舌封喉</nickname>
+  </user>
+  <user>
+    <username>Oppugno</username>
+    <nickname>万弹齐发</nickname>
+  </user>
+  <user>
+    <username>Tergeo</username>
+    <nickname>旋风扫净</nickname>
+  </user>
+  <user>
+    <username>Skeleton is reproduced</username>
+    <nickname>尸骨再现</nickname>
+  </user>
+  <user>
+    <username>Episkey</username>
+    <nickname>愈合如初</nickname>
+  </user>
+  <user>
+    <username>Felix Felicis</username>
+    <nickname>福灵剂</nickname>
+  </user>
+  <user>
+    <username>Mandrake Restorative</username>
+    <nickname>曼德拉草恢复剂</nickname>
+  </user>
+  <user>
+    <username>Bone Health Ling</username>
+    <nickname>生骨灵</nickname>
+  </user>
+  <user>
+    <username>Polyjuice Potion</username>
+    <nickname>复方汤剂</nickname>
+  </user>
+  <user>
+    <username>Veritaserum</username>
+    <nickname>吐真剂</nickname>
+  </user>
+  <user>
+    <username>Wolfsbane potion</username>
+    <nickname>狼毒药剂</nickname>
+  </user>
+  <user>
+    <username>Baruffio</username>
+    <nickname>巴费醒脑剂</nickname>
+  </user>
+  <user>
+    <username>Dittay</username>
+    <nickname>白鲜香精</nickname>
+  </user>
+  <user>
+    <username>Blood</username>
+    <nickname>补血药</nickname>
+  </user>
+  <user>
+    <username>Everlasting Elixir</username>
+    <nickname>长生不老药</nickname>
+  </user>
+  <user>
+    <username>Love Potion</username>
+    <nickname>迷魂药</nickname>
+  </user>
+  <user>
+    <username>Calming Draught</username>
+    <nickname>镇定剂</nickname>
+  </user>
+  <user>
+    <username>Draught of Living Death</username>
+    <nickname>活地狱汤剂</nickname>
+  </user>
+  <user>
+    <username>Elixir to Induce Euphoria</username>
+    <nickname>欢欣剂</nickname>
+  </user>
+  <user>
+    <username>Amortentia</username>
+    <nickname>迷情剂</nickname>
+  </user>
+  <user>
+    <username>Gobstones</username>
+    <nickname>高布石游戏</nickname>
+  </user>
+  <user>
+    <username>Quidditch</username>
+    <nickname>魁地奇</nickname>
+  </user>
+  <user>
+    <username>Quaffle</username>
+    <nickname>鬼飞球</nickname>
+  </user>
+  <user>
+    <username>chaser</username>
+    <nickname>追球手</nickname>
+  </user>
+  <user>
+    <username>keeper</username>
+    <nickname>守门员</nickname>
+  </user>
+  <user>
+    <username>Bludges</username>
+    <nickname>游走球</nickname>
+  </user>
+  <user>
+    <username>beater</username>
+    <nickname>击球手</nickname>
+  </user>
+  <user>
+    <username>Golden Snitch</username>
+    <nickname>金色飞贼</nickname>
+  </user>
+  <user>
+    <username>seeker</username>
+    <nickname>找球手</nickname>
+  </user>
+  <user>
+    <username>Wizarding Chess</username>
+    <nickname>巫师棋</nickname>
+  </user>
+  <user>
+    <username>Chenber Music</username>
+    <nickname>室内乐</nickname>
+  </user>
+  <user>
+    <username>tenpin bowling</username>
+    <nickname>十柱滚木球戏</nickname>
+  </user>
+  <user>
+    <username>Astronomy</username>
+    <nickname>天文学</nickname>
+  </user>
+  <user>
+    <username>Arithmancy</username>
+    <nickname>算术占卜学</nickname>
+  </user>
+  <user>
+    <username>Care of Magical Creatures</username>
+    <nickname>保护神奇生物学</nickname>
+  </user>
+  <user>
+    <username>Charms</username>
+    <nickname>魔咒学</nickname>
+  </user>
+  <user>
+    <username>Defense Against the Dark Arts</username>
+    <nickname>黑魔法防御术</nickname>
+  </user>
+  <user>
+    <username>Divination</username>
+    <nickname>占卜学</nickname>
+  </user>
+  <user>
+    <username>Flying</username>
+    <nickname>飞行课</nickname>
+  </user>
+  <user>
+    <username>Herbology</username>
+    <nickname>草药学</nickname>
+  </user>
+  <user>
+    <username>History of Magic</username>
+    <nickname>魔法史</nickname>
+  </user>
+  <user>
+    <username>Muggle Studies</username>
+    <nickname>麻瓜研究学</nickname>
+  </user>
+  <user>
+    <username>Potions</username>
+    <nickname>魔药学</nickname>
+  </user>
+  <user>
+    <username>the Study of Ancient Runes</username>
+    <nickname>古代魔文研究</nickname>
+  </user>
+  <user>
+    <username>Transfiguration</username>
+    <nickname>变形术</nickname>
+  </user>
+  <user>
+    <username>goblin</username>
+    <nickname>妖精</nickname>
+  </user>
+  <user>
+    <username>centaur</username>
+    <nickname>马人</nickname>
+  </user>
+  <user>
+    <username>werewolf</username>
+    <nickname>狼人</nickname>
+  </user>
+  <user>
+    <username>thestral</username>
+    <nickname>夜骐</nickname>
+  </user>
+  <user>
+    <username>merpeople</username>
+    <nickname>人鱼</nickname>
+  </user>
+  <user>
+    <username>phoenix</username>
+    <nickname>凤凰</nickname>
+  </user>
+  <user>
+    <username>unicorn</username>
+    <nickname>独角兽</nickname>
+  </user>
+  <user>
+    <username>house</username>
+    <nickname>家养小精灵</nickname>
+  </user>
+  <user>
+    <username>zombie</username>
+    <nickname>阴尸</nickname>
+  </user>
+  <user>
+    <username>slug</username>
+    <nickname>鼻涕虫</nickname>
+  </user>
+  <user>
+    <username>giant</username>
+    <nickname>巨人</nickname>
+  </user>
+  <user>
+    <username>vampire</username>
+    <nickname>吸血鬼</nickname>
+  </user>
+  <user>
+    <username>troll</username>
+    <nickname>巨怪</nickname>
+  </user>
+  <user>
+    <username>basilisk</username>
+    <nickname>蛇怪</nickname>
+  </user>
+  <user>
+    <username>boggart</username>
+    <nickname>博格特</nickname>
+  </user>
+  <user>
+    <username>dementor</username>
+    <nickname>摄魂怪</nickname>
+  </user>
+  <user>
+    <username>Norwegian Ridgeback</username>
+    <nickname>挪威脊背龙</nickname>
+  </user>
+  <user>
+    <username>Chinese Fireball</username>
+    <nickname>中国火球龙</nickname>
+  </user>
+  <user>
+    <username>Swedish Short</username>
+    <nickname>瑞典短鼻龙</nickname>
+  </user>
+  <user>
+    <username>Hungarian Horntail</username>
+    <nickname>匈牙利树蜂</nickname>
+  </user>
+  <user>
+    <username>Common Welsh Green</username>
+    <nickname>威尔士绿龙</nickname>
+  </user>
+  <user>
+    <username>hippogviff</username>
+    <nickname>鹰头马身有翼兽</nickname>
+  </user>
+  <user>
+    <username>fire</username>
+    <nickname>火螃蟹</nickname>
+  </user>
+  <user>
+    <username>manti</username>
+    <nickname>人头狮身龙尾兽</nickname>
+  </user>
+  <user>
+    <username>Blast</username>
+    <nickname>炸尾螺</nickname>
+  </user>
+  <user>
+    <username>flobberworm</username>
+    <nickname>弗洛伯毛虫</nickname>
+  </user>
+  <user>
+    <username>the Whomping Willow</username>
+    <nickname>打人柳</nickname>
+  </user>
+  <user>
+    <username>mandrake</username>
+    <nickname>曼德拉草</nickname>
+  </user>
+  <user>
+    <username>veela</username>
+    <nickname>媚娃</nickname>
+  </user>
+  <user>
+    <username>ghoul</username>
+    <nickname>食尸鬼</nickname>
+  </user>
+  <user>
+    <username>Irish Leprechaun</username>
+    <nickname>爱尔兰小矮妖</nickname>
+  </user>
+  <user>
+    <username>gnome</username>
+    <nickname>地精</nickname>
+  </user>
+  <user>
+    <username>the King</username>
+    <nickname>国王十字车站</nickname>
+  </user>
+  <user>
+    <username>the Ministry of Magic</username>
+    <nickname>魔法部</nickname>
+  </user>
+  <user>
+    <username>St</username>
+    <nickname>圣芒戈魔法伤病医院</nickname>
+  </user>
+  <user>
+    <username>Improver Use of Magic Office</username>
+    <nickname>禁止滥用魔法司</nickname>
+  </user>
+  <user>
+    <username>the Leaky Cauldron</username>
+    <nickname>破釜酒吧</nickname>
+  </user>
+  <user>
+    <username>Auror Headquarters</username>
+    <nickname>傲罗指挥部</nickname>
+  </user>
+  <user>
+    <username>Department of Mysteries</username>
+    <nickname>神秘事物司</nickname>
+  </user>
+  <user>
+    <username>Eeglops Owl Emporium</username>
+    <nickname>咿啦猫头鹰商店</nickname>
+  </user>
+  <user>
+    <username>Misure of Muggle Artefacts Office</username>
+    <nickname>禁止滥用麻瓜物品司</nickname>
+  </user>
+  <user>
+    <username>Flourish and Blotts</username>
+    <nickname>丽痕书店</nickname>
+  </user>
+  <user>
+    <username>Gringotts</username>
+    <nickname>古灵阁巫师银行</nickname>
+  </user>
+  <user>
+    <username>Knockturn Alley</username>
+    <nickname>翻倒巷</nickname>
+  </user>
+  <user>
+    <username>Diagon Alley</username>
+    <nickname>对角巷</nickname>
+  </user>
+  <user>
+    <username>Madam Malkin</username>
+    <nickname>摩金夫人长袍专卖店</nickname>
+  </user>
+  <user>
+    <username>Beauxbatons Academy of Magic</username>
+    <nickname>布斯巴顿魔法学校</nickname>
+  </user>
+  <user>
+    <username>Duemstrang Institute</username>
+    <nickname>德姆斯特朗魔法学校</nickname>
+  </user>
+  <user>
+    <username>Hogworts School of Witchcraft and Wizardry</username>
+    <nickname>霍格沃茨魔法学校</nickname>
+  </user>
+  <user>
+    <username>the Chamber of Secrets</username>
+    <nickname>密室</nickname>
+  </user>
+  <user>
+    <username>Three Broomsticks</username>
+    <nickname>三把扫帚酒吧</nickname>
+  </user>
+  <user>
+    <username>the Hog</username>
+    <nickname>猪头酒吧</nickname>
+  </user>
+  <user>
+    <username>Honey Dukes</username>
+    <nickname>蜂蜜公爵糖果店</nickname>
+  </user>
+  <user>
+    <username>the Room of Requirement</username>
+    <nickname>有求必应屋</nickname>
+  </user>
+  <user>
+    <username>the Shrieking Shack</username>
+    <nickname>尖叫棚屋</nickname>
+  </user>
+  <user>
+    <username>the common room</username>
+    <nickname>公共休息室</nickname>
+  </user>
+  <user>
+    <username>the Dark Forest</username>
+    <nickname>禁林</nickname>
+  </user>
+  <user>
+    <username>the Burrow</username>
+    <nickname>陋居</nickname>
+  </user>
+  <user>
+    <username>Godric</username>
+    <nickname>戈德里克山谷</nickname>
+  </user>
+  <user>
+    <username>Number Twelve Grimmauld Place</username>
+    <nickname>号</nickname>
+  </user>
+  <user>
+    <username>Acid Pop</username>
+    <nickname>酸棒糖</nickname>
+  </user>
+  <user>
+    <username>Apple Tart</username>
+    <nickname>苹果饼</nickname>
+  </user>
+  <user>
+    <username>Bettie Bott</username>
+    <nickname>比比多味豆</nickname>
+  </user>
+  <user>
+    <username>Butterbeer</username>
+    <nickname>黄油啤酒</nickname>
+  </user>
+  <user>
+    <username>Canary Cream</username>
+    <nickname>金丝雀饼干</nickname>
+  </user>
+  <user>
+    <username>Cauldron Cake</username>
+    <nickname>锅形蛋糕</nickname>
+  </user>
+  <user>
+    <username>Chocolate Cauldron</username>
+    <nickname>巧克力坩埚</nickname>
+  </user>
+  <user>
+    <username>Chocolate Frog</username>
+    <nickname>巧克力蛙</nickname>
+  </user>
+  <user>
+    <username>Cockroach Cluster</username>
+    <nickname>蟑螂堆</nickname>
+  </user>
+  <user>
+    <username>Drooble</username>
+    <nickname>吹宝超级泡泡糖</nickname>
+  </user>
+  <user>
+    <username>Eggnog</username>
+    <nickname>蛋奶酒</nickname>
+  </user>
+  <user>
+    <username>Fizzing Whizzbee</username>
+    <nickname>冰糕球</nickname>
+  </user>
+  <user>
+    <username>Ginger Newt</username>
+    <nickname>生姜蝾螈饼干</nickname>
+  </user>
+  <user>
+    <username>Licorice Wand</username>
+    <nickname>甘草魔杖</nickname>
+  </user>
+  <user>
+    <username>Mars Bars</username>
+    <nickname>火星棒</nickname>
+  </user>
+  <user>
+    <username>Ogden</username>
+    <nickname>火焰威士忌</nickname>
+  </user>
+  <user>
+    <username>Owl Treat</username>
+    <nickname>猫头鹰食</nickname>
+  </user>
+  <user>
+    <username>Pumpkin Pasty</username>
+    <nickname>南瓜馅饼</nickname>
+  </user>
+  <user>
+    <username>Rock Cake</username>
+    <nickname>岩皮饼</nickname>
+  </user>
+  <user>
+    <username>Sugar Quill</username>
+    <nickname>糖羽毛笔</nickname>
+  </user>
+  <user>
+    <username>Squeakying Sugar Mice</username>
+    <nickname>会尖叫的糖耗子</nickname>
+  </user>
+</Harry-Potter-Character>

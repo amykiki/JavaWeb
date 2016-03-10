@@ -174,6 +174,8 @@ public class controlUser extends HttpServlet {
             } catch (MsgException em) {
                 errMsg += em.getMessage();
             }
+        } else if (action.equals("query")) {
+
         }
 
     }

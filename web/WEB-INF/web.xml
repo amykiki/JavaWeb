@@ -29,6 +29,23 @@
         <servlet-name>controlUser</servlet-name>
         <url-pattern>/admin/user/control</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>listUser</servlet-name>
+        <jsp-file>/admin/user/list.jsp</jsp-file>
+        <init-param>
+            <param-name>pageItems</param-name>
+            <param-value>20</param-value>
+        </init-param>
+        <init-param>
+            <param-name>pageShow</param-name>
+            <param-value>4</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>listUser</servlet-name>
+        <url-pattern>/admin/user/list.jsp</url-pattern>
+    </servlet-mapping>
     
     <servlet>
         <servlet-name>loginUser</servlet-name>

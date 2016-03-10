@@ -87,10 +87,10 @@ count = <%=count++%><br/>
     <pg:first>
         <a href="<%=pageUrl%>">首页</a>
     </pg:first>
-    <pg:pages>
+    <pg:itemCounts>
         <a href="<%=pageUrl%>"><%=pageNumber%>
         </a>
-    </pg:pages>
+    </pg:itemCounts>
     <pg:last>
         <a href="<%=pageUrl%>">尾页</a>
     </pg:last>

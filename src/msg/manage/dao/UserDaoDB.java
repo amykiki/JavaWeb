@@ -1,12 +1,11 @@
 package msg.manage.dao;
 
-import com.sun.xml.internal.bind.v2.model.core.ID;
+import msg.manage.modal.Pager;
 import msg.manage.modal.Role;
 import msg.manage.modal.Status;
 import msg.manage.modal.User;
 import msg.manage.util.DBUtil;
 import msg.manage.util.MsgException;
-import sun.plugin.cache.OldCacheEntry;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -95,10 +94,10 @@ public class UserDaoDB implements IUserDao {
             throw new MsgException("修改用户失败 " + e.getMessage());
         }
         conn = DBUtil.getConn();
-        String sql   = "update " + DBUtil.tUser + " set password = ?, nickname = ?, role = ?, status = ? where id = ?";
+        String sql = "update " + DBUtil.tUser + " set password = ?, nickname = ?, role = ?, status = ? where id = ?";
         String value;
         int    num;
-        int affectedRows;
+        int    affectedRows;
         try {
             ps = conn.prepareStatement(sql);
             if (user.getPassword() != null) {
@@ -163,21 +162,38 @@ public class UserDaoDB implements IUserDao {
     }
 
     @Override
-    public List<User> loadList() {
+    public Pager loadList(int pageIndex, int pageItems) {
         List<User> users = new ArrayList<>();
         conn = DBUtil.getConn();
-        String sql = "select * from " + DBUtil.tUser;
+
+        int startItem = (pageIndex - 1) * pageItems;
+        Pager pager = new Pager();
+        pager.setCurrentPage(pageIndex);
+        String sql = "select count(*) from " + DBUtil.tUser;
         try {
+            ps = conn.prepareStatement(sql);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                pager.setItemCounts(rs.getInt(1));
+            }
+            int sumPages = (pager.getItemCounts() + pageItems - 1) / pageItems;
+            if (pageIndex > sumPages) {
+                startItem = (sumPages - 1) * pageItems;
+                pageIndex = sumPages;
+            }
+            sql = "select * from " + DBUtil.tUser + " limit " + startItem + "," + pageItems;
             ps = conn.prepareStatement(sql);
             rs = ps.executeQuery();
             while (rs.next()) {
                 users.add(sql2User(rs));
             }
+            pager.setCurrentPage(pageIndex);
+            pager.setUsers(users);
         } catch (SQLException e) {
             throw new RuntimeException(e.getMessage());
         }
         close();
-        return users;
+        return pager;
     }
 
     private User sql2User(ResultSet rs) {
