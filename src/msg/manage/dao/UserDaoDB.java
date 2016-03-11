@@ -1,5 +1,6 @@
 package msg.manage.dao;
 
+import javafx.beans.binding.When;
 import msg.manage.modal.Pager;
 import msg.manage.modal.Role;
 import msg.manage.modal.Status;
@@ -162,30 +163,50 @@ public class UserDaoDB implements IUserDao {
     }
 
     @Override
-    public Pager loadList(int pageIndex, int pageItems) {
+    public Pager loadList(int pageIndex, int pageItems, String username, String nickname, int role, int status) {
         List<User> users = new ArrayList<>();
         conn = DBUtil.getConn();
 
-        int startItem = (pageIndex - 1) * pageItems;
-        Pager pager = new Pager();
+        int   startItem = (pageIndex - 1) * pageItems;
+        Pager pager     = new Pager();
         pager.setCurrentPage(pageIndex);
-        String sql = "select count(*) from " + DBUtil.tUser;
+        String querySql = " where 1=1 " +
+                "and username like ? " +
+                "and nickname like ? " +
+                "and role <> ? " +
+                "and status <> ?";
+
+        int iIndex = 1;
+
+        String sql = "select count(*) from " + DBUtil.tUser + querySql;
         try {
             ps = conn.prepareStatement(sql);
+            ps.setString(1, "%" + username + "%");
+            ps.setString(2, "%" + nickname + "%");
+            ps.setInt(3, role);
+            ps.setInt(4, status);
             rs = ps.executeQuery();
             if (rs.next()) {
                 pager.setItemCounts(rs.getInt(1));
             }
             int sumPages = (pager.getItemCounts() + pageItems - 1) / pageItems;
-            if (pageIndex > sumPages) {
-                startItem = (sumPages - 1) * pageItems;
-                pageIndex = sumPages;
-            }
-            sql = "select * from " + DBUtil.tUser + " limit " + startItem + "," + pageItems;
-            ps = conn.prepareStatement(sql);
-            rs = ps.executeQuery();
-            while (rs.next()) {
-                users.add(sql2User(rs));
+            if (sumPages > 0) {
+                if (pageIndex > sumPages) {
+                    startItem = (sumPages - 1) * pageItems;
+                    pageIndex = sumPages;
+                }
+                sql = "select * from " + DBUtil.tUser + querySql + " limit " + startItem + "," + pageItems;
+                ps = conn.prepareStatement(sql);
+                ps.setString(1, "%" + username + "%");
+                ps.setString(2, "%" + nickname + "%");
+                ps.setInt(3, role);
+                ps.setInt(4, status);
+                rs = ps.executeQuery();
+                while (rs.next()) {
+                    users.add(sql2User(rs));
+                }
+            } else {
+                pageIndex = 0;
             }
             pager.setCurrentPage(pageIndex);
             pager.setUsers(users);

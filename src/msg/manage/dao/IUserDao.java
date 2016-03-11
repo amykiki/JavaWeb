@@ -18,7 +18,7 @@ public interface IUserDao {
 
     public User load(int id) throws MsgException;
 
-    public Pager loadList(int pageIndex, int pageItems);
+    public Pager loadList(int pageIndex, int pageItems, String usernmae, String nickname, int role, int status);
 
     public User login(String username, String password) throws MsgException;
 }

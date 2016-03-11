@@ -35,7 +35,7 @@
         <jsp-file>/admin/user/list.jsp</jsp-file>
         <init-param>
             <param-name>pageItems</param-name>
-            <param-value>20</param-value>
+            <param-value>15</param-value>
         </init-param>
         <init-param>
             <param-name>pageShow</param-name>

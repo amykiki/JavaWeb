@@ -4,7 +4,10 @@
 <%@ page import="msg.manage.dao.IUserDao" %>
 <%@ page import="msg.manage.dao.DaoFactory" %>
 <%@ page import="msg.manage.modal.Role" %>
-<%@ page import="msg.manage.modal.Pager" %><%--
+<%@ page import="msg.manage.modal.Pager" %>
+<%@ page import="msg.manage.modal.Status" %>
+<%@ page import="java.util.Map" %>
+<%@ page import="java.util.HashMap" %><%--
   Created by IntelliJ IDEA.
   User: Amysue
   Date: 2016/3/6
@@ -24,6 +27,7 @@
             overflow: hidden;
             padding: 0;
             text-align: center;
+            clear: both;
         }
 
         ul.tsc_pagination li {
@@ -57,6 +61,32 @@
             background: #e7f2c7 none repeat scroll 0 0;
             color: #4f7119;
         }
+
+        div.post_div label {
+            display: inline-block;
+            width: 48%;
+            float: left;
+            clear: left;
+            text-align: right;
+        }
+
+        div.post_div input, div.post_div select {
+            float: left;
+            text-align: left;
+            display: inline-block;
+            width: auto;
+        }
+
+        #query_but input {
+            float: none;
+            margin-right: 10px;
+            text-align: center;
+        }
+        #query_but {
+            clear: left;
+            /*float: left;*/
+            text-align: center;
+        }
     </style>
     <%
         int pageItems = Integer.parseInt(config.getInitParameter("pageItems"));
@@ -75,17 +105,67 @@
             currentPage = 1;
         }
         int pageNums = 1;
+        String username = "";
+        String nickname = "";
+        Map<String, String> search_default = new HashMap<>();
+        search_default.put(Role.ADMIN.toString(), "");
+        search_default.put(Role.NORMAL.toString(), "");
+        search_default.put(Status.INUSE.toString(), "");
+        search_default.put(Status.OFFUSE.toString(), "");
+        search_default.put("RoleAll", "selected");
+        search_default.put("StatusAll", "selected");
+        String role = "All";
+        String status = "All";
+        if (request.getAttribute("param") != null) {
+            username = (String) request.getAttribute("username");
+            nickname = (String) request.getAttribute("nickname");
+            try {
+                Role role0 = Role.valueOf((String) request.getParameter("role"));
+                search_default.put(role0.toString(), "selected");
+                role = role0.toString();
+                search_default.put("RoleAll", "");
+            } catch (IllegalArgumentException e) {
+            }
+
+            try {
+                Status status0 = Status.valueOf((String) request.getParameter("status"));
+                search_default.put(status0.toString(), "selected");
+                status = status0.toString();
+                search_default.put("StatusAll", "selected");
+            } catch (IllegalArgumentException e) {
+            }
+
+        }
         if (request.getAttribute("pager") == null) {
             IUserDao udao = DaoFactory.getUserDao();
-            pager = udao.loadList(currentPage, pageItems);
+            pager = udao.loadList(currentPage, pageItems, "", "", -1, -1);
         } else {
             pager = (Pager) request.getAttribute("pager");
         }
         users = pager.getUsers();
         currentPage = pager.getCurrentPage();
         pageNums = (pager.getItemCounts() + pageItems - 1) / pageItems;
+        int currentFirst;
+        int currentLast;
+        if (currentPage == 0) {
+            currentFirst = 0;
+            currentLast = 0;
+        } else {
+            currentFirst = (currentPage - 1)* pageItems + 1;
+            currentLast = currentPage * pageItems;
+            if (currentLast > pager.getItemCounts()) {
+                currentLast = pager.getItemCounts();
+            }
+        }
         User luser = (User) session.getAttribute("loguser");
         String errMsg = (String) request.getAttribute("errMsg");
+        String href = request.getContextPath() + "/admin/user/control?action=query" +
+                "&pageItems=" + pageItems +
+                "&username=" + username +
+                "&nickname=" + nickname +
+                "&role=" + role +
+                "&status=" + status +
+                "&jump=JumpTo";
 
     %>
 </head>
@@ -175,28 +255,43 @@
         }
     %>
 </table>
-<form action="/admin/user/control" method="get" >
+<form action="/admin/user/control" method="get">
     <input type="hidden" name="action" value="query">
+    <input type="hidden" name="pageItems" value="<%=pageItems%>">
     <div align="center">
-        <span>当前第<%=currentPage%>页(<%=(currentPage - 1) * pageItems + 1%>-<%=(currentPage - 1) * pageItems + pageItems%>)，共<%=pageNums%>页</span>
+        <span>当前第<%=currentPage%>页(<%=currentFirst%>-<%=currentLast%>)，共<%=pageNums%>页</span>
         <br/>
         <input type="text" name="toPage" align="center">
         <input type="submit" name="jump" value="JumpTo">
     </div>
-    <div align="center">
-        <select name="searchKey">
-            <option value="username">用户名</option>
-            <option value="nickname">昵称</option>
+    <div class="post_div">
+        <label>用户名</label><input type="text" name="username" value="<%=username%>">
+
+        <label>昵称</label><input type="text" name="nickname" value="<%=nickname%>">
+
+        <label>权限</label>
+        <select name="role">
+            <option value="All" <%=search_default.get("RoleAll")%>>所有</option>
+            <option value="<%=Role.NORMAL.toString()%>" <%=search_default.get(Role.NORMAL.toString())%>>普通用户</option>
+            <option value="<%=Role.ADMIN.toString()%>" <%=search_default.get(Role.ADMIN.toString())%>>管理员</option>
         </select>
-        <input type="text" name="searchValue">
-        <input type="submit" name="search" value="Search">
+        <label>状态</label>
+        <select name="status">
+            <option value="All" <%=search_default.get("RoleAll")%>>所有</option>
+            <option value="<%=Status.INUSE.toString()%>" <%=search_default.get(Status.INUSE.toString())%>>有效用户</option>
+            <option value="<%=Status.OFFUSE.toString()%>" <%=search_default.get(Status.OFFUSE.toString())%>>暂停用户</option>
+        </select>
+        <div id="query_but">
+            <input type="reset" name="reset" value="reset">
+            <input type="submit" name="search" value="search">
+        </div>
     </div>
     <ul class="tsc_pagination tsc_paginationA tsc_paginationA05">
-        <li><a href="list.jsp?toPage=1">首页</a></li>
+        <li><a href="<%=href%>&toPage=1">首页</a></li>
         <%
             if (currentPage > 1) {
         %>
-        <li><a href="list.jsp?toPage=<%=currentPage-1%>">前一页</a></li>
+        <li><a href="<%=href%>&toPage=<%=currentPage-1%>">前一页</a></li>
         <%
             }
         %>
@@ -226,7 +321,7 @@
         <%
         } else {
         %>
-        <li><a href="list.jsp?toPage=<%=i%>"><%=i%>
+        <li><a href="<%=href%>&toPage=<%=i%>"><%=i%>
         </a></li>
         <%
                 }
@@ -238,11 +333,11 @@
         <%
             if (currentPage < pageNums) {
         %>
-        <li><a href="list.jsp?toPage=<%=currentPage-1%>">下一页</a></li>
+        <li><a href="<%=href%>&toPage=<%=currentPage+1%>">下一页</a></li>
         <%
             }
         %>
-        <li><a href="list.jsp?toPage=<%=pageNums%>">尾页</a></li>
+        <li><a href="<%=href%>&toPage=<%=pageNums%>">尾页</a></li>
     </ul>
 </form>
 </body>

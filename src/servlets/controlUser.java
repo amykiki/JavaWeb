@@ -2,6 +2,7 @@ package servlets;
 
 import msg.manage.dao.DaoFactory;
 import msg.manage.dao.IUserDao;
+import msg.manage.modal.Pager;
 import msg.manage.modal.Role;
 import msg.manage.modal.Status;
 import msg.manage.modal.User;
@@ -154,7 +155,7 @@ public class controlUser extends HttpServlet {
                     return;
                 }
 
-            } else  {
+            } else {
                 if (id > 0) {
                     errMsg = "没有权限修改用户";
                 } else {
@@ -175,7 +176,72 @@ public class controlUser extends HttpServlet {
                 errMsg += em.getMessage();
             }
         } else if (action.equals("query")) {
+            rd = req.getRequestDispatcher(req.getContextPath() + "/admin/user/list.jsp");
+            int pageItems = 0;
+            try {
+                pageItems = Integer.parseInt(req.getParameter("pageItems"));
+            } catch (NumberFormatException e) {
+                errMsg = "No Page Items";
+                req.setAttribute("errMsg", errMsg);
+            }
+            int    toPage   = 1;
+            String username = "";
+            String nickname = "";
+            String role     = "";
+            String status   = "";
+            int rvalue = -1;
+            int svalue = -1;
+            if (req.getParameter("toPage") != null) {
+                try {
+                    toPage = Integer.parseInt(req.getParameter("toPage"));
+                } catch (NumberFormatException e) {
+                    toPage = 1;
+                }
+            }
+            try {
+                username = req.getParameter("username").trim();
+            } catch (NullPointerException e) {
+                username = "";
+            }
 
+            try {
+                nickname = req.getParameter("nickname").trim();
+            } catch (NullPointerException e) {
+                nickname = "";
+            }
+            if (req.getParameter("role") != null) {
+                try {
+                    Role r1 = Role.valueOf(req.getParameter("role"));
+                    role = r1.toString();
+                    rvalue = (r1.getCode() + 1) % 2;
+                } catch (IllegalArgumentException e) {
+                    role = "";
+                    rvalue = -1;
+                }
+            }
+
+            if (req.getParameter("status") != null) {
+                try {
+                    Status s1 = Status.valueOf(req.getParameter("status"));
+                    status = s1.toString();
+                    svalue = (s1.getCode() + 1)%2;
+                } catch (IllegalArgumentException e) {
+                    status = "";
+                    svalue = -1;
+                }
+            }
+            req.setAttribute("param", "true");
+            req.setAttribute("toPage", toPage);
+            req.setAttribute("username", username);
+            req.setAttribute("nickname", nickname);
+            req.setAttribute("role", role);
+            req.setAttribute("status", status);
+            if (errMsg.equals("")) {
+                Pager pager = udao.loadList(toPage, pageItems, username, nickname, rvalue, svalue);
+                req.setAttribute("pager", pager);
+            }
+            rd.forward(req, resp);
+            return;
         }
 
     }
