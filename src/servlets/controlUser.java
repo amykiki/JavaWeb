@@ -194,6 +194,9 @@ public class controlUser extends HttpServlet {
             if (req.getParameter("toPage") != null) {
                 try {
                     toPage = Integer.parseInt(req.getParameter("toPage"));
+                    if (toPage < 1) {
+                        toPage = 1;
+                    }
                 } catch (NumberFormatException e) {
                     toPage = 1;
                 }
